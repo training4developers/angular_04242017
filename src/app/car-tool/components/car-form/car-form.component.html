@@ -1,0 +1,10 @@
+<form [formGroup]="newCarForm" novalidate (ngSubmit)="submitCar()">
+    <div>
+        <label for="car-make-input">Car Make</label>
+        <input type="text" id="car-make-input" formControlName="carMakeInput" required>
+        <span>Car make is required.</span>
+    </div>
+    <button>Submit</button>
+    <button type="reset">Reset</button>
+    <button type="button" click="doSomething()">Do Something</button>
+</form>

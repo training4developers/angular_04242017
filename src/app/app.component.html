@@ -1,3 +1,6 @@
 <h1>
   {{title}}
 </h1>
+<app-car-table [cars]="cars"></app-car-table>
+<app-car-form (onCarSubmit)="addCar($event)"></app-car-form>
+
