@@ -1,7 +1,8 @@
 <form [formGroup]="newCarForm" novalidate (ngSubmit)="submitCar()">
     <div>
         <label for="car-make-input">Car Make</label>
-        <input type="text" id="car-make-input" formControlName="carMakeInput" required>
+        <input type="text" id="car-make-input"
+          formControlName="carMakeInput" appRequiredValidator>
         <span>Car make is required.</span>
     </div>
     <button>Submit</button>
