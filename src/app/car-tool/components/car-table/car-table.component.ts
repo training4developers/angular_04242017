@@ -1,4 +1,5 @@
-import { Component, OnInit, DoCheck, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, DoCheck, Input, ChangeDetectionStrategy, ViewChild, AfterViewInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Car } from '../../../../shared/models/car';
 import { LoggerService } from '../../services/logger.service';
@@ -10,9 +11,16 @@ import { CarsService } from '../../services/cars.service';
   styleUrls: ['./car-table.component.css'],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CarTableComponent implements OnInit, DoCheck {
+export class CarTableComponent implements OnInit, DoCheck, AfterViewInit {
+
+  @ViewChild(NgForm)
+  public theForm: NgForm;
 
   constructor(private logger: LoggerService, private carsSvc: CarsService) { }
+
+  ngAfterViewInit() {
+    //console.log(this.theForm);
+  }
 
   ngOnInit() { }
 

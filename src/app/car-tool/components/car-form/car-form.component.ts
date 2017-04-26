@@ -26,7 +26,8 @@ const carTracker: Tracker = {
   templateUrl: './car-form.component.html',
   styleUrls: ['./car-form.component.css'],
   providers: [
-    { provide: TRACKER_TOKEN, useClass: WebTracker },
+    { provide: TRACKER_TOKEN, useClass: WebTracker, multi: true },
+    { provide: TRACKER_TOKEN, useValue: carTracker, multi: true },
   ]
 })
 export class CarFormComponent {
@@ -38,8 +39,8 @@ export class CarFormComponent {
   @Output()
   public onCarSubmit = new EventEmitter<Car>();
 
-  constructor(@Inject(TRACKER_TOKEN) private tracker: Tracker) {
-    this.tracker.track();
+  constructor(@Inject(TRACKER_TOKEN) private tracker: Tracker[]) {
+    console.log(this.tracker);
   }
 
   public submitCar() {

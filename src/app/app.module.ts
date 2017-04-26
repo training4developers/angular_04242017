@@ -5,16 +5,21 @@ import { HttpModule } from '@angular/http';
 
 import { CarToolModule } from './car-tool/car-tool.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { appRouterModule } from './app.router';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     CarToolModule,
+    appRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

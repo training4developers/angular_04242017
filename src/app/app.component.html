@@ -1,6 +1,12 @@
-<h1>
-  {{title}}
-</h1>
-<app-car-table></app-car-table>
-<app-car-form (onCarSubmit)="addCar($event)"></app-car-form>
-
+<header>
+  <h1>{{title}}</h1>
+</header>
+<nav>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/car-table">Car Table</a></li>
+    <li><a routerLink="/car-form">Add Car Form</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<footer></footer>
